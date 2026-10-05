@@ -1,0 +1,7 @@
+# Files in the repository that are not part of the published site
+.git
+.assetsignore
+.nojekyll
+wrangler.jsonc
+.wrangler
+node_modules

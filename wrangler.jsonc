@@ -1,0 +1,9 @@
+{
+  // Cloudflare Workers: serve this folder as a static site.
+  // "name" must match the project name in the Cloudflare dashboard.
+  "name": "sandesh-adk",
+  "compatibility_date": "2026-10-04",
+  "assets": {
+    "directory": "./"
+  }
+}
