@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sandesh Adhikari — Decisions under uncertainty</title>
+  <meta name="description" content="Sandesh Adhikari builds simulations, fast surrogate models and optimizers for high-stakes decisions under uncertainty. Ph.D. researcher at UT Arlington.">
+  <meta name="author" content="Sandesh Adhikari">
+  <meta name="theme-color" content="#0a0d12">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sandesh Adhikari — Decisions under uncertainty">
+  <meta property="og:description" content="When you can't protect everything, how do you choose? Simulation, surrogate modeling and optimization.">
+  <meta property="og:url" content="https://sandeshadhikari23.github.io/">
+  <meta property="og:image" content="https://sandeshadhikari23.github.io/assets/img/share.jpg">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.className = 'js';</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sandesh Adhikari",
+    "jobTitle": "Ph.D. Student and Graduate Research Assistant",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "The University of Texas at Arlington" },
+    "knowsAbout": ["Optimization", "Monte Carlo simulation", "Surrogate modeling", "Gaussian processes", "Integer programming", "Decision-making under uncertainty"],
+    "sameAs": [
+      "https://www.linkedin.com/in/sandesh-adhikari-277943204/",
+      "https://scholar.google.com/citations?user=i2OZhVgAAAAJ&hl=en",
+      "https://github.com/sandeshadhikari23"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="nav__brand" href="#top">
+        <img class="nav__mark" src="assets/img/favicon.svg" alt="" width="26" height="26">
+        Sandesh Adhikari
+      </a>
+      <button class="nav__toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#problem">The problem</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#talks">Talks</a></li>
+        <li><a href="#civil">Civil engineering</a></li>
+        <li class="nav__cta"><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- =================================================================== HERO -->
+    <section class="hero" id="top">
+      <canvas class="hero__net" id="hero-net" aria-hidden="true"></canvas>
+
+      <div class="wrap">
+        <div class="hero__grid">
+          <div>
+            <p class="hero__who"><strong>Sandesh Adhikari</strong> · Ph.D. researcher, UT Arlington</p>
+            <h1 class="hero__question">When you can’t protect everything, how do you choose?</h1>
+            <p class="hero__lede">I build the mathematics and the software that answer that question for systems too large to reason about by hand.</p>
+            <p class="hero__sub">I simulate what could go wrong, teach fast models to stand in for slow ones, and write optimizers that decide where limited money does the most good. I learned it on roads and pipelines facing earthquakes and floods.</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#problem">Try the problem yourself</a>
+              <a class="btn" href="#about">What I bring</a>
+            </div>
+          </div>
+
+          <figure class="portrait">
+            <div class="portrait__frame">
+              <img src="assets/img/headshot-880.jpg"
+                   srcset="assets/img/headshot-440.jpg 440w, assets/img/headshot-880.jpg 880w"
+                   sizes="(max-width: 900px) 210px, 340px"
+                   width="880" height="1101" alt="Portrait of Sandesh Adhikari">
+            </div>
+            <figcaption>Arlington, Texas</figcaption>
+          </figure>
+        </div>
+
+        <ul class="stats">
+          <li>
+            <span class="stat__value">6 <small>+</small> 1</span>
+            <span class="stat__label">research papers and manuscripts, and one co-authored book</span>
+          </li>
+          <li>
+            <span class="stat__value">2 trades</span>
+            <span class="stat__label">civil engineer and software developer, before starting the Ph.D.</span>
+          </li>
+          <li>
+            <span class="stat__value">6 <small>+</small> 3</span>
+            <span class="stat__label">languages: six I program in, three I speak</span>
+          </li>
+          <li>
+            <span class="stat__value">4 years</span>
+            <span class="stat__label">on a full merit scholarship through engineering school</span>
+          </li>
+        </ul>
+
+        <div class="tracks">
+          <a class="trackcard" href="#problem">
+            <span class="trackcard__no">Track 01</span>
+            <span class="trackcard__title">Computational research</span>
+            <p class="trackcard__text">The problem I work on, how I attack it, and where I have applied it. With a version you can play.</p>
+            <span class="trackcard__go">Start with the problem →</span>
+          </a>
+          <a class="trackcard theme-paper" href="#civil">
+            <span class="trackcard__no">Track 02</span>
+            <span class="trackcard__title">Civil engineering</span>
+            <p class="trackcard__text">Coursework, design projects, field testing and professional practice.</p>
+            <span class="trackcard__go">See the engineering →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================== ABOUT -->
+    <section class="section section--ruled" id="about">
+      <div class="wrap">
+        <p class="kicker">Who I am</p>
+        <h2 class="h-display">An engineer who writes the code, and a programmer who has tested concrete by hand.</h2>
+
+        <div class="profile">
+          <div class="profile__body reveal">
+            <p>I studied civil engineering in Nepal, where earthquakes are not hypothetical. Today I work on the question that follows from that: with limited money and an uncertain future, where does protection matter most?</p>
+            <p>My answer is computational. I build simulations that play out thousands of possible futures, statistical models that learn to imitate slow physics in milliseconds, and optimizers that search through more options than anyone could list. I worked as a software developer before the Ph.D., so I build these tools end to end and I care whether they run fast.</p>
+            <p>Infrastructure is where I learned this. The shape of the problem is the same wherever capital meets risk: too many choices, incomplete information, and a real cost to being wrong. That is the work I want to keep doing.</p>
+            <p class="profile__aside">Away from the keyboard: hiking, camping, running and the gym. I rarely turn down something I have not tried before.</p>
+          </div>
+
+          <dl class="facts reveal">
+            <div><dt>Now</dt><dd>Ph.D. student and graduate research assistant, Civil Engineering, The University of Texas at Arlington</dd></div>
+            <div><dt>Group</dt><dd><a href="https://ntirigroup.uta.edu/" rel="noopener">North Texas Initiative for Resilient Infrastructure</a></dd></div>
+            <div><dt>Strengths</dt><dd>Optimization, stochastic simulation, statistical modeling, scientific programming</dd></div>
+            <div><dt>Speaks</dt><dd>English, Nepali, Hindi</dd></div>
+            <div><dt>Based</dt><dd>Arlington, Texas</dd></div>
+          </dl>
+        </div>
+
+        <h3 class="subhead">What I bring</h3>
+        <div class="abilities">
+          <article class="ability reveal">
+            <svg class="ability__glyph" viewBox="0 0 64 40" aria-hidden="true">
+              <path pathLength="1" d="M4 20 C22 20 34 7 60 4"/>
+              <path pathLength="1" d="M4 20 C22 20 36 14 60 13"/>
+              <path pathLength="1" d="M4 20 C22 20 36 24 60 26"/>
+              <path pathLength="1" d="M4 20 C22 20 34 33 60 37"/>
+            </svg>
+            <h4>I model uncertainty honestly</h4>
+            <p>I build Monte Carlo simulations that carry randomness from the cause all the way to the outcome, and I check that an estimate has settled before I trust it.</p>
+            <p class="ability__also"><span>Same skill elsewhere</span>Scenario generation, risk estimation, valuation by simulation</p>
+            <ul class="tags"><li>Monte Carlo</li><li>Uncertainty quantification</li><li>Time series</li></ul>
+          </article>
+
+          <article class="ability reveal">
+            <svg class="ability__glyph" viewBox="0 0 64 40" aria-hidden="true">
+              <path class="is-band" d="M4 26 C16 6 26 34 38 20 S54 2 60 6 L60 18 C54 14 48 34 38 32 S16 20 4 36 Z"/>
+              <path pathLength="1" d="M4 31 C16 12 26 34 38 26 S54 8 60 12"/>
+              <circle cx="4" cy="31" r="2.4"/><circle cx="24" cy="26" r="2.4"/><circle cx="38" cy="26" r="2.4"/><circle cx="60" cy="12" r="2.4"/>
+            </svg>
+            <h4>I make slow models fast</h4>
+            <p>When one evaluation takes hours, I train a statistical stand-in that answers in milliseconds and reports how sure it is, then spend real computation only where it changes the answer.</p>
+            <p class="ability__also"><span>Same skill elsewhere</span>Calibrating expensive models, searching strategy and parameter spaces</p>
+            <ul class="tags"><li>Gaussian processes</li><li>Bayesian optimization</li><li>Experimental design</li></ul>
+          </article>
+
+          <article class="ability reveal">
+            <svg class="ability__glyph" viewBox="0 0 64 40" aria-hidden="true">
+              <path class="is-axis" d="M6 4 V36 H60"/>
+              <path pathLength="1" d="M12 8 C14 24 26 31 54 33"/>
+              <circle cx="12" cy="8" r="2.4"/><circle cx="16" cy="19" r="2.4"/><circle cx="24" cy="27" r="2.4"/><circle cx="38" cy="31" r="2.4"/><circle cx="54" cy="33" r="2.4"/>
+            </svg>
+            <h4>I optimize hard decisions</h4>
+            <p>Thousands of yes-or-no choices, objectives that pull against each other, a budget that never stretches. I use evolutionary search when the problem is a black box and integer programming when it can be solved exactly.</p>
+            <p class="ability__also"><span>Same skill elsewhere</span>Efficient frontiers, constrained allocation, scheduling</p>
+            <ul class="tags"><li>Multi-objective search</li><li>Integer programming</li><li>Genetic algorithms</li></ul>
+          </article>
+
+          <article class="ability reveal">
+            <svg class="ability__glyph" viewBox="0 0 64 40" aria-hidden="true">
+              <path pathLength="1" d="M8 30 L24 10 L44 16 L56 32 L30 30 Z"/>
+              <path pathLength="1" d="M24 10 L30 30 L44 16"/>
+              <circle cx="8" cy="30" r="2.4"/><circle cx="24" cy="10" r="2.4"/><circle cx="44" cy="16" r="2.4"/><circle cx="56" cy="32" r="2.4"/><circle cx="30" cy="30" r="2.4"/>
+            </svg>
+            <h4>I see systems, not parts</h4>
+            <p>Roads, pipes and supply chains fail as networks. I use graph theory to find the few links everything else depends on, and to shrink a search before it starts.</p>
+            <p class="ability__also"><span>Same skill elsewhere</span>Dependency and contagion structure, supply and transport networks</p>
+            <ul class="tags"><li>Graph theory</li><li>Community detection</li><li>Centrality</li></ul>
+          </article>
+
+          <article class="ability reveal">
+            <svg class="ability__glyph" viewBox="0 0 64 40" aria-hidden="true">
+              <path pathLength="1" d="M22 8 L8 20 L22 32"/>
+              <path pathLength="1" d="M42 8 L56 20 L42 32"/>
+              <path pathLength="1" d="M36 5 L28 35"/>
+            </svg>
+            <h4>I write the software</h4>
+            <p>I shipped production code before I did research: a .NET and PostgreSQL system used to plan road maintenance budgets in Nepal. Now I build research pipelines that chain several simulators together.</p>
+            <p class="ability__also"><span>Languages</span>Python, MATLAB, C, C#, SQL, JavaScript</p>
+            <ul class="tags"><li>Scientific computing</li><li>Simulation pipelines</li><li>Databases</li></ul>
+          </article>
+
+          <article class="ability reveal">
+            <svg class="ability__glyph" viewBox="0 0 64 40" aria-hidden="true">
+              <path pathLength="1" d="M8 9 H56"/>
+              <path pathLength="1" d="M8 20 H46"/>
+              <path pathLength="1" d="M8 31 H32"/>
+              <circle cx="56" cy="31" r="2.4"/>
+            </svg>
+            <h4>I explain it to people who have to act</h4>
+            <p>I have presented research at an ASCE conference, co-authored an open textbook, and been part of a team that delivered hands-on safety training to disaster-recovery workers. A result nobody understands does not get used.</p>
+            <p class="ability__also"><span>In practice</span>A conference talk, papers, a book, hands-on training</p>
+            <ul class="tags"><li>Technical writing</li><li>Presenting</li><li>Training</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== THE PROBLEM -->
+    <section class="section section--ruled" id="problem">
+      <div class="wrap">
+        <p class="kicker">Track 01 · The problem</p>
+        <h2 class="h-display">You can reinforce six links. The earthquake has not picked a spot yet.</h2>
+        <p class="section__intro">This is the decision I work on, shrunk to fit a screen. Every city, utility and fund faces a version of it: more to protect than money to protect it, and a future that only arrives as probabilities.</p>
+
+        <div class="game reveal" id="game">
+          <div class="game__board">
+            <canvas role="img" aria-label="A small supply network crossed by a fault line. Click links to reinforce them; use the buttons beside it to pick a plan and simulate earthquakes."></canvas>
+          </div>
+
+          <div class="game__panel">
+            <p class="game__budget"><span data-left>6</span> of 6 reinforcements left</p>
+            <p class="game__status" data-status aria-live="polite">&nbsp;</p>
+
+            <div class="game__actions">
+              <button class="btn btn--primary" type="button" data-run>Run 300 earthquakes</button>
+              <button class="btn btn--quiet" type="button" data-random>Pick six for me</button>
+              <button class="btn btn--quiet" type="button" data-clear>Clear</button>
+              <button class="btn btn--quiet" type="button" data-new>New network</button>
+            </div>
+
+            <div class="scores">
+              <p class="scores__title">Neighborhoods still supplied, on average</p>
+              <div class="score" data-bar="none">
+                <span class="score__label">No reinforcement</span>
+                <span class="score__track"><span class="score__fill"></span></span>
+                <span class="score__value">–</span>
+              </div>
+              <div class="score score--you" data-bar="you">
+                <span class="score__label">Your plan</span>
+                <span class="score__track"><span class="score__fill"></span></span>
+                <span class="score__value">–</span>
+              </div>
+              <div class="score score--opt" data-bar="opt">
+                <span class="score__label">Optimizer</span>
+                <span class="score__track"><span class="score__fill"></span></span>
+                <span class="score__value">–</span>
+              </div>
+            </div>
+
+            <p class="game__verdict" data-verdict aria-live="polite"></p>
+            <button class="btn btn--quiet" type="button" data-reveal disabled>Show the optimizer’s plan</button>
+          </div>
+
+          <ul class="demo__legend game__legend">
+            <li><span class="key key--dot" style="--k: var(--text)"></span>Neighborhood</li>
+            <li><span class="key key--square"></span>Supply</li>
+            <li><span class="key key--line" style="--k: var(--series-2)"></span>Likelier to fail</li>
+            <li><span class="key key--cross"></span>Broken</li>
+            <li><span class="key key--line key--thick"></span>Your reinforcement</li>
+            <li><span class="key key--line key--thick" style="--k: var(--series-3)"></span>Optimizer’s</li>
+          </ul>
+        </div>
+
+        <h3 class="subhead">Why the real thing is hard</h3>
+        <div class="hard">
+          <article class="hard__item reveal">
+            <span class="hard__no">01</span>
+            <h4>The future is a distribution</h4>
+            <p>Nobody knows which earthquake arrives. A plan has to hold up across thousands of possible ones, so it is judged on a whole range of outcomes and never on one forecast.</p>
+          </article>
+          <article class="hard__item reveal">
+            <span class="hard__no">02</span>
+            <h4>The options explode</h4>
+            <p>The toy above has <strong data-plans>millions of</strong> ways to choose six links. A real network with 300 pipes has more possible plans than there are atoms in the observable universe.</p>
+          </article>
+          <article class="hard__item reveal">
+            <span class="hard__no">03</span>
+            <h4>Every answer is expensive</h4>
+            <p>On a real system, scoring one plan means running physics: pressure in every pipe, or traffic on every road. A single run can take minutes to hours, and a search needs thousands.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== APPROACH -->
+    <section class="section section--ruled" id="approach">
+      <div class="wrap">
+        <p class="kicker">Track 01 · How I attack it</p>
+        <h2 class="h-display">Three moves, in this order.</h2>
+
+        <ol class="moves reveal">
+          <li style="--i:0">
+            <span class="moves__no"></span>
+            <h3>Simulate</h3>
+            <p>Play out the uncertainty. Thousands of possible events, each one damaging the system in a different way.</p>
+          </li>
+          <li style="--i:1">
+            <span class="moves__no"></span>
+            <h3>Approximate</h3>
+            <p>Train a fast statistical model to stand in for the slow simulator, one that also knows where it is guessing.</p>
+          </li>
+          <li style="--i:2">
+            <span class="moves__no"></span>
+            <h3>Optimize</h3>
+            <p>Search with the fast model in the loop, and spend real simulations only where they could change the decision.</p>
+          </li>
+        </ol>
+
+        <div class="demos">
+          <figure class="demo reveal" id="demo-ego">
+            <div class="demo__head">
+              <div>
+                <span class="demo__tag">Live · move two</span>
+                <h4 class="demo__title">A model that knows what it does not know</h4>
+              </div>
+              <div class="demo__controls">
+                <button type="button" data-act="toggle">Pause</button>
+                <button type="button" data-act="reset">Restart</button>
+              </div>
+            </div>
+            <div class="demo__stage">
+              <canvas role="img" aria-label="Animated chart: a statistical model is fitted to a few samples of an expensive function. Each step adds the one sample expected to help most, until the minimum is found."></canvas>
+            </div>
+            <ul class="demo__legend">
+              <li><span class="key key--line"></span>Model’s estimate</li>
+              <li><span class="key key--band"></span>Its uncertainty</li>
+              <li><span class="key key--line key--thin" style="--k: var(--muted)"></span>The truth</li>
+              <li><span class="key key--dot" style="--k: var(--text)"></span>Simulated</li>
+              <li><span class="key key--dot" style="--k: var(--series-2)"></span>Next sample</li>
+            </ul>
+            <p class="demo__readout" data-readout>&nbsp;</p>
+            <figcaption>Each dot is one costly simulation. The model chooses the next one itself, where it expects the largest improvement, and finds the lowest point of a curve it has never fully seen.</figcaption>
+          </figure>
+
+          <figure class="demo reveal" id="demo-pareto">
+            <div class="demo__head">
+              <div>
+                <span class="demo__tag">Live · move three</span>
+                <h4 class="demo__title">No single best answer, only the best trade-offs</h4>
+              </div>
+              <div class="demo__controls">
+                <button type="button" data-act="toggle">Pause</button>
+                <button type="button" data-act="reset">Restart</button>
+              </div>
+            </div>
+            <div class="demo__stage">
+              <canvas role="img" aria-label="Animated scatter plot: a population of candidate plans evolves toward the frontier of best trade-offs between two competing costs."></canvas>
+            </div>
+            <ul class="demo__legend">
+              <li><span class="key key--dot"></span>Best trade-offs</li>
+              <li><span class="key key--dot" style="--k: var(--muted)"></span>Beaten on both counts</li>
+              <li><span class="key key--line key--thin" style="--k: var(--muted)"></span>Earlier fronts</li>
+            </ul>
+            <p class="demo__readout" data-readout>&nbsp;</p>
+            <figcaption>Protect against earthquakes and you neglect floods, and the reverse. An evolutionary search finds the whole menu of defensible compromises, which is the same object as an efficient frontier.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== WORK -->
+    <section class="section section--ruled" id="work">
+      <div class="wrap">
+        <p class="kicker">Track 01 · The work</p>
+        <h2 class="h-display">Where I have put it to work.</h2>
+        <p class="section__intro">My current projects are in peer review, so they appear here in outline only. Published work is listed in full.</p>
+
+        <div class="cards">
+          <article class="card reveal">
+            <span class="badge badge--review">In review</span>
+            <h4>Roads that face more than one hazard</h4>
+            <p>Planning repairs for a city road network that has to survive both earthquakes and floods, when the best plan for one is a poor plan for the other.</p>
+            <p class="card__meta">Multi-objective optimization · surrogate modeling<br>First author</p>
+          </article>
+          <article class="card reveal">
+            <span class="badge badge--review">In review</span>
+            <h4>Water networks after an earthquake</h4>
+            <p>Deciding where a utility should add shut-off valves, so that a broken main closes a street and not a district.</p>
+            <p class="card__meta">Stochastic optimization · network analysis<br>First author</p>
+          </article>
+          <article class="card reveal">
+            <span class="badge badge--review">In review</span>
+            <h4>Exact answers in place of long searches</h4>
+            <p>Recasting a simulation-driven search as a mathematical program that can be solved to proven optimality in a fraction of the time.</p>
+            <p class="card__meta">Statistical learning · integer programming<br>First author</p>
+          </article>
+        </div>
+
+        <h3 class="pubgroup">Published</h3>
+        <ol class="pubs">
+          <li class="pub">
+            <div class="pub__status"><span class="badge badge--published">2026</span></div>
+            <div>
+              <h4 class="pub__title">A Machine Learning-Based Framework for Predicting Project Duration during the Planning Phase of Highway Construction Projects</h4>
+              <p class="pub__authors">S. Bhatta, S. Acharya, A. Roy, <b>S. Adhikari</b>, M. Shahandashti</p>
+              <p class="pub__venue"><em>International Conference on Transportation and Development 2026</em>, ASCE, pp. 12–23</p>
+            </div>
+          </li>
+          <li class="pub">
+            <div class="pub__status"><span class="badge badge--published">2025</span></div>
+            <div>
+              <h4 class="pub__title">Assessing the Impact of Network Topology on Seismic Resilience in Gas Pipeline Networks</h4>
+              <p class="pub__authors">S. Sharveen, <b>S. Adhikari</b>, A. Roy, M. Shahandashti</p>
+              <p class="pub__venue"><em>Pipelines 2025: Planning and Design</em>, ASCE, Vol. 3, pp. 361–371 · <a href="https://doi.org/10.1061/9780784486382.039" rel="noopener">doi:10.1061/9780784486382.039</a></p>
+            </div>
+          </li>
+          <li class="pub">
+            <div class="pub__status"><span class="badge badge--published">2025</span></div>
+            <div>
+              <h4 class="pub__title">Designing a Sustainable Multi-Objective Mixed-Integer Linear Programming (MILP) Model for Shrimp Supply Chains</h4>
+              <p class="pub__authors">M. A. H. Abadi, K. Saraswat, <b>S. Adhikari</b>, S. More, M. Ghasempour, E. C. Jones Jr.</p>
+              <p class="pub__venue"><em>IISE Annual Conference Proceedings</em>, pp. 1–6</p>
+            </div>
+          </li>
+          <li class="pub">
+            <div class="pub__status"><span class="badge badge--published">Book</span></div>
+            <div>
+              <h4 class="pub__title">Safety and Resilience in Disaster Debris Removal and Clean-Up Operations: A Field and Training Guide for Resilience Workers</h4>
+              <p class="pub__authors">M. Shahandashti, A. Roy, Z. Yin, A. Balderrama, <b>S. Adhikari</b>, S. Acharya</p>
+              <p class="pub__venue">Mavs Open Press, Arlington, Texas · open access</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="stack reveal">
+          <div>
+            <h3>Languages</h3>
+            <ul class="tags"><li>Python</li><li>MATLAB</li><li>C</li><li>C#</li><li>SQL</li><li>JavaScript</li></ul>
+          </div>
+          <div>
+            <h3>Simulation</h3>
+            <ul class="tags"><li>WNTR</li><li>SUMO</li><li>OpenSHA</li><li>ArcGIS Pro</li></ul>
+          </div>
+          <div>
+            <h3>Engineering</h3>
+            <ul class="tags"><li>ETABS</li><li>SAP2000</li><li>AutoCAD</li><li>Civil 3D</li></ul>
+          </div>
+          <div>
+            <h3>Data, web, writing</h3>
+            <ul class="tags"><li>PostgreSQL</li><li>ASP.NET</li><li>LaTeX</li></ul>
+          </div>
+        </div>
+
+        <p style="margin-top: 36px"><a class="btn" href="https://scholar.google.com/citations?user=i2OZhVgAAAAJ&hl=en" rel="noopener">Google Scholar profile →</a></p>
+      </div>
+    </section>
+
+    <!-- ================================================== TALKS AND TRAINING -->
+    <section class="section section--ruled" id="talks">
+      <div class="wrap">
+        <p class="kicker">Talks and training</p>
+        <h2 class="h-display">Out of the lab.</h2>
+        <p class="section__intro">Research gets better when it leaves the building. Two recent occasions when mine did.</p>
+
+        <div class="cards cards--two">
+          <article class="card card--post reveal">
+            <span class="card__when">2025 · Tampa, Florida</span>
+            <h4>Presenting at the ASCE UESI Pipelines Conference</h4>
+            <p>I presented our paper on gas pipeline networks and earthquakes. The short version: looped networks generally hold up better after an earthquake than tree-like ones, where one damaged link can cut off everything beyond it.</p>
+            <a class="card__link" href="https://www.linkedin.com/posts/sandesh-adhikari-277943204_uesipipelines2025-civilengineering-asce-share-7362166371838799872-3FQE/" rel="noopener">Read the post on LinkedIn →</a>
+          </article>
+
+          <article class="card card--post reveal">
+            <span class="card__when">August 2026 · Austin, Texas</span>
+            <h4>NHERI SPARC at the Texas Advanced Computing Center</h4>
+            <p>Three days of hands-on computational training alongside other early-career natural-hazards researchers: high-performance computing, uncertainty quantification, AI and scalable workflows, taught by people from DesignSafe, the NHERI SimCenter, NHERI RAPID and TACC.</p>
+            <a class="card__link" href="https://www.linkedin.com/posts/sandesh-adhikari-277943204_nheri-sparc2026-designsafe-ugcPost-7495472546855682049-Etp1/" rel="noopener">Read the post on LinkedIn →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================== TRACK 02 — CIVIL ENGINEERING -->
+    <section class="section civil theme-paper" id="civil">
+      <div class="wrap">
+        <p class="kicker">Track 02</p>
+        <h2 class="h-display">Civil engineering</h2>
+        <p class="section__intro">Before I modeled infrastructure, I tested it by hand: rebound hammers, ultrasonic pulses and ground-penetrating radar on a tower in Kathmandu. This is the engineering that keeps the models honest.</p>
+
+        <div class="civil__grid">
+          <figure class="frame reveal" id="demo-frame">
+            <div class="frame__stage">
+              <canvas role="img" aria-label="Animated elevation of a 17-storey building frame swaying under simulated earthquake ground motion, with the ground acceleration record drawn beneath it."></canvas>
+            </div>
+            <figcaption>
+              <span class="frame__readout" data-readout>&nbsp;</span>
+              A 17-storey building model responding to an earthquake: three vibration modes, 5% damping, sway exaggerated. A nod to my final-year project, the earthquake-resistant design of a 17-storey building.
+            </figcaption>
+          </figure>
+
+          <div>
+            <div class="block reveal">
+              <h3 class="block__title">Education</h3>
+
+              <div class="entry">
+                <span class="entry__when">In progress</span>
+                <div>
+                  <h4>Ph.D., Civil Engineering</h4>
+                  <p class="entry__where">The University of Texas at Arlington</p>
+                  <p class="entry__text">Graduate research assistant at the North Texas Initiative for Resilient Infrastructure, working on the resilience of transportation and pipeline networks.</p>
+                </div>
+              </div>
+
+              <div class="entry">
+                <span class="entry__when">2018 – 2023</span>
+                <div>
+                  <h4>B.E., Civil Engineering</h4>
+                  <p class="entry__where">Tribhuvan University, Institute of Engineering, Pulchowk Campus</p>
+                  <p class="entry__text">Full four-year merit scholarship. Elective in Time Series Analysis.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="block reveal">
+              <h3 class="block__title">Coursework and design projects</h3>
+
+              <div class="entry">
+                <span class="entry__when">2022 – 2023</span>
+                <div>
+                  <h4>Earthquake-resistant design of a 17-storey multipurpose building</h4>
+                  <p class="entry__where">Final-year project</p>
+                  <p class="entry__text">Structural analysis and seismic design of a high-rise building.</p>
+                  <ul class="tags"><li>Structural design</li><li>Seismic analysis</li></ul>
+                </div>
+              </div>
+
+              <div class="entry">
+                <span class="entry__when">2023</span>
+                <div>
+                  <h4>Synthetic streamflow generation, Sinja Khola at Diware</h4>
+                  <p class="entry__where">Time Series Analysis elective</p>
+                  <p class="entry__text">Stochastic generation of river flow sequences from a historical record.</p>
+                  <ul class="tags"><li>Time series</li><li>Hydrology</li></ul>
+                </div>
+              </div>
+
+              <div class="entry">
+                <span class="entry__when">2018</span>
+                <div>
+                  <h4>Database management system in C</h4>
+                  <p class="entry__where">Programming coursework</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="block reveal">
+              <h3 class="block__title">Field and professional practice</h3>
+
+              <div class="entry">
+                <span class="entry__when">FY 2025</span>
+                <div>
+                  <h4>Worker safety in disaster debris removal</h4>
+                  <p class="entry__where">U.S. Department of Labor Susan Harwood Training Grant · UT Arlington</p>
+                  <p class="entry__text">Part of the team that delivered hands-on, bilingual safety training to resilience workers, and co-author of the twelve-chapter open textbook that grew out of it.</p>
+                  <ul class="tags"><li>Construction safety</li><li>Training delivery</li><li>Technical writing</li></ul>
+                </div>
+              </div>
+
+              <div class="entry">
+                <span class="entry__when">From 2023</span>
+                <div>
+                  <h4>Civil Engineer and Software Developer</h4>
+                  <p class="entry__where">SOFTWEL (P) Ltd., Kathmandu</p>
+                  <p class="entry__text">Building design and surveys for lift and canal irrigation, alongside engineering software on ASP.NET. Contributed to the web system Nepal's Department of Roads uses to track road conditions and plan annual maintenance budgets, and managed its PostgreSQL database.</p>
+                  <ul class="tags"><li>Building design</li><li>Irrigation survey</li><li>C#</li><li>PostgreSQL</li></ul>
+                </div>
+              </div>
+
+              <div class="entry">
+                <span class="entry__when">2022 – 2023</span>
+                <div>
+                  <h4>Structural condition assessment, Kathmandu View Tower</h4>
+                  <p class="entry__where">Research and Training Unit, Pulchowk Campus · for Kathmandu Metropolitan City</p>
+                  <p class="entry__text">Non-destructive evaluation of construction quality: rebound hammer, ultrasonic pulse velocity, rebar location, ground-penetrating radar, ultrasonic tomography and as-built survey, followed by data interpretation.</p>
+                  <ul class="tags"><li>NDT</li><li>GPR</li><li>Ultrasonic testing</li></ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="block reveal">
+              <h3 class="block__title">Recognition and service</h3>
+
+              <div class="entry">
+                <span class="entry__when">2023</span>
+                <div>
+                  <h4>Program coordinator, inter-college model competition</h4>
+                  <p class="entry__where">ADHAAR-2079, Pulchowk Campus</p>
+                </div>
+              </div>
+              <div class="entry">
+                <span class="entry__when">2023</span>
+                <div>
+                  <h4>Earthquake education campaign</h4>
+                  <p class="entry__where">With KTM Geo Lab, in public schools across the Kathmandu Valley</p>
+                </div>
+              </div>
+              <div class="entry">
+                <span class="entry__when">2021</span>
+                <div>
+                  <h4>Winner, intra-college model competition</h4>
+                  <p class="entry__where">Ecological applications of pervious concrete</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ CONTACT -->
+    <section class="section" id="contact">
+      <div class="wrap contact">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2 class="contact__title">Have a decision too big to reason through by hand?</h2>
+          <p class="contact__text">I am always glad to talk about hard problems, new opportunities and research collaborations.</p>
+          <a class="btn btn--primary" href="mailto:sandeshadhikari34@gmail.com">sandeshadhikari34@gmail.com</a>
+        </div>
+
+        <ul class="links">
+          <li><a href="https://www.linkedin.com/in/sandesh-adhikari-277943204/" rel="noopener"><span>LinkedIn</span><span>in/sandesh-adhikari</span></a></li>
+          <li><a href="https://scholar.google.com/citations?user=i2OZhVgAAAAJ&hl=en" rel="noopener"><span>Google Scholar</span><span>publications</span></a></li>
+          <li><a href="https://github.com/sandeshadhikari23" rel="noopener"><span>GitHub</span><span>sandeshadhikari23</span></a></li>
+          <li><a href="https://ntirigroup.uta.edu/" rel="noopener"><span>Research group</span><span>ntirigroup.uta.edu</span></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span>© <span data-year>2026</span> Sandesh Adhikari</span>
+      <span>Every simulation on this page is computed live in your browser.</span>
+    </div>
+  </footer>
+
+  <script defer src="assets/js/site.js"></script>
+  <script defer src="assets/js/hero-network.js"></script>
+  <script defer src="assets/js/game.js"></script>
+  <script defer src="assets/js/demo-ego.js"></script>
+  <script defer src="assets/js/demo-pareto.js"></script>
+  <script defer src="assets/js/frame-sway.js"></script>
+</body>
+</html>
