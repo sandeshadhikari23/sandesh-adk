@@ -90,25 +90,6 @@
           </figure>
         </div>
 
-        <ul class="stats">
-          <li>
-            <span class="stat__value">6 <small>+</small> 1</span>
-            <span class="stat__label">research papers and manuscripts, and one co-authored book</span>
-          </li>
-          <li>
-            <span class="stat__value">2 trades</span>
-            <span class="stat__label">civil engineer and software developer, before starting the Ph.D.</span>
-          </li>
-          <li>
-            <span class="stat__value">6 <small>+</small> 3</span>
-            <span class="stat__label">languages: six I program in, three I speak</span>
-          </li>
-          <li>
-            <span class="stat__value">4 years</span>
-            <span class="stat__label">on a full merit scholarship through engineering school</span>
-          </li>
-        </ul>
-
         <div class="tracks">
           <a class="trackcard" href="#problem">
             <span class="trackcard__no">Track 01</span>
@@ -143,6 +124,7 @@
           <dl class="facts reveal">
             <div><dt>Now</dt><dd>Ph.D. student and graduate research assistant, Civil Engineering, The University of Texas at Arlington</dd></div>
             <div><dt>Group</dt><dd><a href="https://ntirigroup.uta.edu/" rel="noopener">North Texas Initiative for Resilient Infrastructure</a></dd></div>
+            <div><dt>Project</dt><dd>Currently working on a U.S. Department of Transportation (USDOT) project on the risk and resilience of road networks</dd></div>
             <div><dt>Strengths</dt><dd>Optimization, stochastic simulation, statistical modeling, scientific programming</dd></div>
             <div><dt>Speaks</dt><dd>English, Nepali, Hindi</dd></div>
             <div><dt>Based</dt><dd>Arlington, Texas</dd></div>
@@ -329,6 +311,28 @@
           </li>
         </ol>
 
+        <h3 class="subhead">Why not just train a machine learning model?</h3>
+        <p class="section__intro">It is the first thing people suggest. For this problem it is the wrong tool on its own, for three reasons.</p>
+        <div class="hard">
+          <article class="hard__item reveal">
+            <span class="hard__no">01</span>
+            <h4>There is almost no data to learn from</h4>
+            <p>Machine learning needs many examples. Here the earthquake has not happened yet, so every example has to be simulated, and one simulation can take hours. That buys a few hundred examples, far fewer than a large model needs.</p>
+          </article>
+          <article class="hard__item reveal">
+            <span class="hard__no">02</span>
+            <h4>It has to know when it is guessing</h4>
+            <p>An optimizer hunts for unusual plans, which is exactly where a trained model has seen nothing. Most models answer confidently anyway. I need one that reports its own uncertainty, so I know where the next simulation is worth paying for.</p>
+          </article>
+          <article class="hard__item reveal">
+            <span class="hard__no">03</span>
+            <h4>A prediction is not a decision</h4>
+            <p>Predicting the damage for one plan does not say which plan to choose out of millions. And a black box cannot be handed to an exact solver, or explained to the people spending public money. A simple model with a known form can do both.</p>
+          </article>
+        </div>
+        <p class="note">Where plenty of real data exists, machine learning is the right tool. I have used it there, in co-authored work on predicting how long highway construction projects will take.</p>
+
+        <h3 class="subhead">What I use instead</h3>
         <div class="demos">
           <figure class="demo reveal" id="demo-ego">
             <div class="demo__head">
@@ -386,14 +390,20 @@
       <div class="wrap">
         <p class="kicker">Track 01 · The work</p>
         <h2 class="h-display">Where I have put it to work.</h2>
-        <p class="section__intro">My current projects are in peer review, so they appear here in outline only. Published work is listed in full.</p>
+        <p class="section__intro">One first-author paper is in press and listed in full. The others are in peer review, so they appear in outline only. The road-network research is part of the U.S. Department of Transportation project I am working on now.</p>
 
-        <div class="cards">
+        <div class="cards cards--two">
+          <article class="card reveal">
+            <span class="badge badge--published">In press</span>
+            <h4>What a decade of research says about earthquakes and pipelines</h4>
+            <p>A systematic review of 183 studies on seismic risk to water and gas pipeline networks, mapping what the field has solved and what it has not: gas systems, secondary hazards such as liquefaction, fire after earthquakes, and decisions made in real time.</p>
+            <p class="card__meta">Bibliometric analysis · systematic review<br>First author · Journal of Pipeline Systems Engineering and Practice</p>
+          </article>
           <article class="card reveal">
             <span class="badge badge--review">In review</span>
             <h4>Roads that face more than one hazard</h4>
             <p>Planning repairs for a city road network that has to survive both earthquakes and floods, when the best plan for one is a poor plan for the other.</p>
-            <p class="card__meta">Multi-objective optimization · surrogate modeling<br>First author</p>
+            <p class="card__meta">Multi-objective optimization · surrogate modeling<br>First author · USDOT project</p>
           </article>
           <article class="card reveal">
             <span class="badge badge--review">In review</span>
@@ -411,6 +421,14 @@
 
         <h3 class="pubgroup">Published</h3>
         <ol class="pubs">
+          <li class="pub">
+            <div class="pub__status"><span class="badge badge--published">In press</span></div>
+            <div>
+              <h4 class="pub__title">Seismic Risk Assessment of Water and Gas Pipeline Networks: Bibliometric Analysis and Systematic Review</h4>
+              <p class="pub__authors"><b>S. Adhikari</b>, S. Sharveen, A. Roy, M. Shahandashti</p>
+              <p class="pub__venue"><em>Journal of Pipeline Systems Engineering and Practice</em>, ASCE, forthcoming · <a href="https://doi.org/10.1061/JPSEA2/PSENG-2147" rel="noopener">doi:10.1061/JPSEA2/PSENG-2147</a></p>
+            </div>
+          </li>
           <li class="pub">
             <div class="pub__status"><span class="badge badge--published">2026</span></div>
             <div>
@@ -520,7 +538,7 @@
                 <div>
                   <h4>Ph.D., Civil Engineering</h4>
                   <p class="entry__where">The University of Texas at Arlington</p>
-                  <p class="entry__text">Graduate research assistant at the North Texas Initiative for Resilient Infrastructure, working on the resilience of transportation and pipeline networks.</p>
+                  <p class="entry__text">Graduate research assistant at the North Texas Initiative for Resilient Infrastructure, working on the resilience of transportation and pipeline networks. Currently on a U.S. Department of Transportation project on road networks.</p>
                 </div>
               </div>
 
@@ -580,7 +598,7 @@
               </div>
 
               <div class="entry">
-                <span class="entry__when">From 2023</span>
+                <span class="entry__when">2023 – 2024</span>
                 <div>
                   <h4>Civil Engineer and Software Developer</h4>
                   <p class="entry__where">SOFTWEL (P) Ltd., Kathmandu</p>
